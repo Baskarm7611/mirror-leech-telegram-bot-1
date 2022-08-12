@@ -88,6 +88,7 @@ def sendLogFile(bot, message: Message):
 
 def sendFile(bot, message: Message, name: str, caption=""):
     try:
+        print(name)
         with open(name, 'rb') as f:
             bot.sendDocument(document=f, filename=f.name, reply_to_message_id=message.message_id,
                              caption=caption, parse_mode='HTMl',chat_id=message.chat_id)
